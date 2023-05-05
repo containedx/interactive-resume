@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3mi6q234m2sn"]
+
+[ext_resource type="Texture2D" uid="uid://d2itkwu66x86r" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_idle_blink_strip8.png" id="3_m38t3"]
+[ext_resource type="Script" path="res://scenes/character/cat_controller.gd" id="11_nx471"]
+
+[sub_resource type="Animation" id="Animation_hcql3"]
+resource_name = "idle"
+length = 1.60002
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_21jb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pgxvk"]
+_data = {
+"RESET": SubResource("Animation_21jb3"),
+"idle": SubResource("Animation_hcql3")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ifwl8"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_rv1du"]
+input_0/name = "idle"
+input_0/auto_advance = false
+input_0/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_mkg67"]
+graph_offset = Vector2(-371.429, -14.1203)
+nodes/idle/node = SubResource("AnimationNodeAnimation_ifwl8")
+nodes/idle/position = Vector2(-180, 80)
+nodes/state/node = SubResource("AnimationNodeTransition_rv1du")
+nodes/state/position = Vector2(120, 80)
+node_connections = [&"output", 0, &"state", &"state", 0, &"idle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncint"]
+size = Vector2(17, 16)
+
+[node name="cat" type="CharacterBody2D"]
+position = Vector2(388, 499)
+scale = Vector2(2, 2)
+script = ExtResource("11_nx471")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_m38t3")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_pgxvk")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_mkg67")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/state/current_state = "idle"
+parameters/state/transition_request = ""
+parameters/state/current_index = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 5)
+shape = SubResource("RectangleShape2D_ncint")
