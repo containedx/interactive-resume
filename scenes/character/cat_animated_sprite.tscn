@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dq6lw8fhetjwv"]
+[gd_scene load_steps=59 format=3 uid="uid://d3mi6q234m2sn"]
 
 [ext_resource type="Texture2D" uid="uid://d2itkwu66x86r" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_idle_blink_strip8.png" id="3_m38t3"]
 [ext_resource type="Texture2D" uid="uid://bmgkoysguwm4m" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_liedown_strip24.png" id="4_0u5y5"]
@@ -386,19 +386,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7vb"]
-size = Vector2(81, 57)
-
-[node name="cat" type="CharacterBody2D"]
-position = Vector2(255, 294)
-script = ExtResource("11_nx471")
-
-[node name="cat_animated_sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
+[node name="cat" type="AnimatedSprite2D"]
+position = Vector2(388, 499)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sexvq")
 animation = &"run"
 autoplay = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9.5, 12.5)
-shape = SubResource("RectangleShape2D_ug7vb")
+script = ExtResource("11_nx471")

@@ -14,13 +14,14 @@ func handle_movement(delta):
 	if moving:
 		position = position.lerp(target_position, delta)
 		
-		if position.distance_squared_to(target_position) > 100000:
-			cat.run()
-		else :
-			cat.walk()
+		if cat.sprite.animation != "jump":
+			if position.distance_squared_to(target_position) > 100000:
+				cat.run()
+			else :
+				cat.walk()
 		
 		if position.distance_squared_to(target_position) <= 5:
-			moving= false
+			moving = false
 			cat.idle()
 
 func handle_input():

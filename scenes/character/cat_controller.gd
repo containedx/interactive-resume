@@ -1,6 +1,7 @@
-extends AnimatedSprite2D
+extends CharacterBody2D
 
 @onready var environment = $"../environment"
+@onready var sprite : AnimatedSprite2D = $cat_animated_sprite
 
 func _process(_delta):
 	handle_movement()
@@ -8,35 +9,35 @@ func _process(_delta):
 
 func handle_movement():
 	if Input.is_action_just_pressed("up"):
-		if animation == "lie":
+		if sprite.animation == "lie":
 			idle()
 		else:
 			jump()
 	if Input.is_action_just_pressed("right"):
-		flip_h = false
+		sprite.flip_h = false
 		walk()
 	if Input.is_action_just_pressed("left"):
-		flip_h = true
+		sprite.flip_h = true
 		walk()
 	if Input.is_action_just_pressed("down"):
 		lie()
 		environment.stop()
 
-	if !is_playing():
+	if !sprite.is_playing():
 		idle()
 
 
 func jump():
-	play("jump")
+	sprite.play("jump")
 
 func idle():
-	play("idle")
+	sprite.play("idle")
 
 func walk():
-	play("walk")
+	sprite.play("walk")
 
 func lie():
-	play("lie")
+	sprite.play("lie")
 
 func run():
-	play("run")
+	sprite.play("run")
