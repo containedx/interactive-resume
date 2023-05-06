@@ -1,9 +1,11 @@
 extends AnimatedSprite2D
 
-@onready var anim_tree = $AnimationTree
-
 
 func _process(_delta):
+	handle_movement()
+
+
+func handle_movement():
 	if Input.is_action_just_released("up"):
 		if animation == "lie":
 			idle()
@@ -25,11 +27,14 @@ func _process(_delta):
 func jump():
 	play("jump")
 
+
 func idle():
 	play("idle")
 
+
 func walk():
 	play("walk")
+
 
 func lie():
 	play("lie")
