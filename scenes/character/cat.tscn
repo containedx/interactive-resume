@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://d3mi6q234m2sn"]
+[gd_scene load_steps=59 format=3 uid="uid://d3mi6q234m2sn"]
 
 [ext_resource type="Texture2D" uid="uid://d2itkwu66x86r" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_idle_blink_strip8.png" id="3_m38t3"]
 [ext_resource type="Texture2D" uid="uid://bmgkoysguwm4m" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_liedown_strip24.png" id="4_0u5y5"]
+[ext_resource type="Texture2D" uid="uid://bvow5t5fjifs0" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_run_strip4.png" id="5_o6uma"]
 [ext_resource type="Texture2D" uid="uid://d3ds1qcarqc1i" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_jump_strip4.png" id="6_omapj"]
 [ext_resource type="Texture2D" uid="uid://xxgrgqco48il" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_land_strip2.png" id="7_xt7o8"]
 [ext_resource type="Texture2D" uid="uid://n61cejk5unhx" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_walk_strip8.png" id="10_fdulk"]
@@ -158,6 +159,22 @@ region = Rect2(880, 0, 40, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg2e4"]
 atlas = ExtResource("4_0u5y5")
 region = Rect2(920, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biqkx"]
+atlas = ExtResource("5_o6uma")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjyls"]
+atlas = ExtResource("5_o6uma")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28kk8"]
+atlas = ExtResource("5_o6uma")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ff5"]
+atlas = ExtResource("5_o6uma")
+region = Rect2(120, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jl5a5"]
 atlas = ExtResource("10_fdulk")
@@ -324,6 +341,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_biqkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjyls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28kk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ff5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jl5a5")
 }, {
 "duration": 1.0,
@@ -356,6 +390,6 @@ animations = [{
 position = Vector2(388, 499)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sexvq")
-animation = &"lie"
+animation = &"run"
 autoplay = "idle"
 script = ExtResource("11_nx471")
