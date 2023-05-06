@@ -5,16 +5,21 @@ extends AnimatedSprite2D
 
 func _process(_delta):
 	if Input.is_action_just_released("up"):
-		jump()
+		if animation == "lie":
+			idle()
+		else:
+			jump()
 	if Input.is_action_just_released("right"):
 		flip_h = false
 		walk()
 	if Input.is_action_just_released("left"):
 		flip_h = true
 		walk()
+	if Input.is_action_just_released("down"):
+		lie()
 
 	if !is_playing():
-		play("idle")
+		idle()
 
 
 func jump():
@@ -25,3 +30,6 @@ func idle():
 
 func walk():
 	play("walk")
+
+func lie():
+	play("lie")
