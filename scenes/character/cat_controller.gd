@@ -6,8 +6,11 @@ extends AnimatedSprite2D
 func _process(_delta):
 	if Input.is_action_just_released("up"):
 		jump()
-	
 	if Input.is_action_just_released("right"):
+		flip_h = false
+		walk()
+	if Input.is_action_just_released("left"):
+		flip_h = true
 		walk()
 
 	if !is_playing():

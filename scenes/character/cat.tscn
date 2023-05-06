@@ -184,5 +184,5 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sexvq")
 animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.847182
+frame_progress = 0.297593
 script = ExtResource("11_nx471")
