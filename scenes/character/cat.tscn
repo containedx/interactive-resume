@@ -394,6 +394,7 @@ position = Vector2(255, 294)
 script = ExtResource("11_nx471")
 
 [node name="cat_animated_sprite" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_sexvq")
 animation = &"jump"

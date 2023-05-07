@@ -11,6 +11,7 @@ colors = PackedColorArray(0, 0, 0, 0.909804)
 gradient = SubResource("Gradient_ugcs1")
 
 [node name="menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
