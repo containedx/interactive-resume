@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr7vmkkbhmbq4"]
+
+[ext_resource type="FontFile" uid="uid://i1l120kxgalm" path="res://assets/fonts/manaspc.ttf" id="1_46kwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmmb5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o18yj"]
+bg_color = Color(0.564706, 0.0313726, 0.0588235, 0.780392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ol60m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="button_template" type="Button"]
+custom_minimum_size = Vector2(400, 100)
+theme_override_colors/font_color = Color(0.564706, 0.0313726, 0.0588235, 1)
+theme_override_colors/font_pressed_color = Color(0.912921, 0.470804, 0.571031, 1)
+theme_override_colors/font_hover_color = Color(0.912921, 0.470804, 0.571031, 1)
+theme_override_fonts/font = ExtResource("1_46kwy")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_lmmb5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o18yj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ol60m")
+text = "my button"

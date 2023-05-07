@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq6ieehf2u5wm"]
+
+[ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_6xawp"]
+[ext_resource type="PackedScene" uid="uid://dr7vmkkbhmbq4" path="res://scenes/menus/button_template.tscn" id="1_tgmpp"]
+
+[sub_resource type="Gradient" id="Gradient_ugcs1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.909804)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4br2a"]
+gradient = SubResource("Gradient_ugcs1")
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+script = ExtResource("1_6xawp")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_4br2a")
+
+[node name="button_menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -109.5
+offset_right = 100.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" parent="button_menu" instance=ExtResource("1_tgmpp")]
+layout_mode = 2
+text = "START"
+
+[node name="credits" parent="button_menu" instance=ExtResource("1_tgmpp")]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="exit" parent="button_menu" instance=ExtResource("1_tgmpp")]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="button_down" from="button_menu/start" to="." method="_on_start_button_down"]
