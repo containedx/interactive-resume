@@ -5,6 +5,9 @@ extends Node2D
 var target_position : Vector2 = position
 var moving : bool = false
 
+var left_border : float = 0.0
+var right_border : float = -100000.0
+
 func _process(delta):
 	handle_input()
 	handle_movement(delta)
@@ -31,6 +34,8 @@ func handle_input():
 	if Input.is_action_pressed("left"):
 		target_position.x += 10
 		moving = true
+	target_position.x = clampf(target_position.x, right_border, left_border)
+	print(target_position.x)
 
 func stop():
 	moving = false
