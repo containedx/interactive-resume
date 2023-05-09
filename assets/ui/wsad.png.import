@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3brd6m3sekc6"
-path="res://.godot/imported/arrowkeys.jpg-abccfc1f55f759dbea65bf6642abeb46.ctex"
+uid="uid://c02hs0y637tu"
+path="res://.godot/imported/wsad.png-1ade208714dceb8e7b033e06cf964867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arrowkeys.jpg"
-dest_files=["res://.godot/imported/arrowkeys.jpg-abccfc1f55f759dbea65bf6642abeb46.ctex"]
+source_file="res://assets/ui/wsad.png"
+dest_files=["res://.godot/imported/wsad.png-1ade208714dceb8e7b033e06cf964867.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c02hs0y637tu"
-path="res://.godot/imported/wsad.png-2027fd36a9acd1fd32635008c31be834.ctex"
+uid="uid://cptv3cjba02gy"
+path="res://.godot/imported/shift.png-a68a0301e6ea94e8f65112e34e7fd67b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wsad.png"
-dest_files=["res://.godot/imported/wsad.png-2027fd36a9acd1fd32635008c31be834.ctex"]
+source_file="res://assets/ui/shift.png"
+dest_files=["res://.godot/imported/shift.png-a68a0301e6ea94e8f65112e34e7fd67b.ctex"]
 
 [params]
 
