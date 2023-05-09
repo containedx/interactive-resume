@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dq6lw8fhetjwv"]
+[gd_scene load_steps=59 format=3 uid="uid://dq6lw8fhetjwv"]
 
 [ext_resource type="Texture2D" uid="uid://d2itkwu66x86r" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_idle_blink_strip8.png" id="3_m38t3"]
 [ext_resource type="Texture2D" uid="uid://bmgkoysguwm4m" path="res://assets/catset_assets/catset_assets/catset_spritesheets/cat03_spritesheets/cat03_liedown_strip24.png" id="4_0u5y5"]
@@ -39,14 +39,6 @@ region = Rect2(240, 0, 40, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_86kdp"]
 atlas = ExtResource("3_m38t3")
 region = Rect2(280, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxwj2"]
-atlas = ExtResource("6_omapj")
-region = Rect2(0, 0, 40, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vde2r"]
-atlas = ExtResource("6_omapj")
-region = Rect2(40, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l4ksc"]
 atlas = ExtResource("6_omapj")
@@ -241,13 +233,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxwj2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vde2r")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_l4ksc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvyq")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3rvyq")
@@ -386,13 +378,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug7vb"]
-size = Vector2(81, 57)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjp4"]
+size = Vector2(40, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8ysb"]
+size = Vector2(52, 40)
 
 [node name="cat" type="CharacterBody2D"]
 position = Vector2(255, 294)
-collision_mask = 8
-platform_wall_layers = 8
 script = ExtResource("11_nx471")
 
 [node name="cat_animated_sprite" type="AnimatedSprite2D" parent="."]
@@ -403,5 +396,9 @@ animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9.5, 12.5)
-shape = SubResource("RectangleShape2D_ug7vb")
+position = Vector2(-4, 20.5)
+shape = SubResource("RectangleShape2D_hbjp4")
+
+[node name="CollisionShape2D_head" type="CollisionShape2D" parent="."]
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_n8ysb")

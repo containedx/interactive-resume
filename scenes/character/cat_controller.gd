@@ -3,11 +3,34 @@ extends CharacterBody2D
 @onready var environment = $"../environment"
 @onready var sprite : AnimatedSprite2D = $cat_animated_sprite
 
+var speed : float = 5000
+var jump_speed : float = 400
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 func _process(_delta):
-	handle_movement()
+	handle_animation()
 
 
-func handle_movement():
+func _physics_process(delta):
+	handle_movement(delta)
+
+
+func handle_movement(delta):
+	velocity.y += gravity * delta 
+	
+	var input_vector = Input.get_vector("left", "right", "up", "down")
+	velocity.x = input_vector.x * delta * speed
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = input_vector.y * jump_speed
+	
+	move_and_slide()
+	print(input_vector, "     ", velocity)
+
+
+func handle_animation():
+	if !sprite.is_playing() or velocity == Vector2.ZERO:
+		idle()
+	
 	if Input.is_action_just_pressed("up"):
 		if sprite.animation == "lie":
 			idle()
@@ -23,8 +46,7 @@ func handle_movement():
 		lie()
 		environment.stop()
 
-	if !sprite.is_playing():
-		idle()
+
 
 
 func jump():
