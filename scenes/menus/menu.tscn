@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq6ieehf2u5wm"]
+[gd_scene load_steps=3 format=3 uid="uid://bq6ieehf2u5wm"]
 
 [ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_6xawp"]
 [ext_resource type="PackedScene" uid="uid://dr7vmkkbhmbq4" path="res://scenes/menus/button_template.tscn" id="1_tgmpp"]
-
-[sub_resource type="Gradient" id="Gradient_ugcs1"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 0.909804)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4br2a"]
-gradient = SubResource("Gradient_ugcs1")
 
 [node name="menu" type="Control"]
 process_mode = 3
@@ -18,16 +11,21 @@ offset_right = 1280.0
 offset_bottom = 719.0
 script = ExtResource("1_6xawp")
 
-[node name="background" type="TextureRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 22.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_4br2a")
+color = Color(0.564706, 0.0313726, 0.0588235, 0.52549)
 
 [node name="button_menu" type="VBoxContainer" parent="."]
+z_index = 100
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
