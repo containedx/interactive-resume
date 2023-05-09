@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqrrf4kq8xkjt"]
+
+[ext_resource type="Texture2D" uid="uid://cbis6imkhhlxd" path="res://assets/ui/frame.png" id="2_37j71"]
+[ext_resource type="Script" path="res://scenes/UI/trap_door.gd" id="2_bnkl4"]
+[ext_resource type="FontFile" uid="uid://i1l120kxgalm" path="res://assets/fonts/manaspc.ttf" id="4_ligd1"]
+
+[sub_resource type="Animation" id="Animation_rvrev"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sample_board:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.482967, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o2ulp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sample_board:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_te1wg"]
+_data = {
+"RESET": SubResource("Animation_o2ulp"),
+"fade": SubResource("Animation_rvrev")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd5j0"]
+size = Vector2(109, 46)
+
+[node name="trap_door0" type="StaticBody2D"]
+position = Vector2(2375, 508)
+script = ExtResource("2_bnkl4")
+
+[node name="sample_board" type="TextureRect" parent="."]
+offset_left = -64.0
+offset_top = -15.0
+offset_right = 48.0
+offset_bottom = 32.0
+texture = ExtResource("2_37j71")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="sample_board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -9.5
+offset_right = 49.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_ligd1")
+theme_override_font_sizes/font_size = 16
+text = "EXPERIENCE"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_te1wg")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, 8)
+shape = SubResource("RectangleShape2D_jd5j0")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]

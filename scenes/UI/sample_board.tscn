@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp6vmdfaufw8v"]
+
+[ext_resource type="Texture2D" uid="uid://cbis6imkhhlxd" path="res://assets/ui/frame.png" id="1_8fce0"]
+[ext_resource type="FontFile" uid="uid://dvxltes21v0yq" path="res://assets/fonts/Merchant Copy.ttf" id="2_ow4hp"]
+
+[node name="sample_board" type="TextureRect"]
+offset_left = 193.0
+offset_top = 138.0
+offset_right = 411.0
+offset_bottom = 358.0
+texture = ExtResource("1_8fce0")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -85.0
+offset_right = 72.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ow4hp")
+theme_override_font_sizes/font_size = 28
+text = "Hello, my name is Kinga and this is my cat LEO 💖🐈
+Try out controls!"
+autowrap_mode = 2

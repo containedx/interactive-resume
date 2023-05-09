@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var sprite : AnimatedSprite2D = $cat_animated_sprite
 
 var normal_speed : float = 5000
-var run_speed : float = 10000
+var run_speed : float = 25000
 
 var speed : float = 5000
 var jump_speed : float = 400
@@ -16,6 +16,23 @@ func _process(_delta):
 
 func _physics_process(delta):
 	handle_movement(delta)
+	detect_collissions()
+	
+
+func detect_collissions():
+	for i in get_slide_collision_count():
+		var collision_object = get_slide_collision(i).get_collider()
+		if collision_object.is_in_group("INTERACTIVE"):
+			show_info( true )
+			if Input.is_action_just_pressed("select"):
+				collision_object.interact()
+		else:
+			show_info(false)
+		
+
+
+func show_info( value ):
+	$info.visible = value
 
 
 func handle_movement(delta):
@@ -27,11 +44,10 @@ func handle_movement(delta):
 		velocity.y = input_vector.y * jump_speed
 	
 	move_and_slide()
-	print(input_vector, "     ", velocity)
 
 
 func handle_animation():
-	if !sprite.is_playing() or velocity == Vector2.ZERO:
+	if !sprite.is_playing() or ( velocity == Vector2.ZERO && sprite.animation != "lie"):
 		idle()
 	
 	if Input.is_action_just_pressed("up"):
@@ -54,7 +70,7 @@ func handle_animation():
 	
 	if Input.is_action_just_pressed("down"):
 		lie()
-		#environment.stop()
+
 
 
 

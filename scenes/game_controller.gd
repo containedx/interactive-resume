@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var anim_player = $AnimationPlayer
 @onready var content = $environment/content
-@onready var menu = $menu
+@onready var menu = $cat/Camera2D/menu
 
 var game_started : bool = false
 
