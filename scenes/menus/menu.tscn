@@ -43,6 +43,7 @@ grow_vertical = 2
 
 [node name="start" parent="button_menu" instance=ExtResource("1_tgmpp")]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.564706, 0.0313726, 0.0588235, 1)
 text = "START"
 
 [node name="credits" parent="button_menu" instance=ExtResource("1_tgmpp")]

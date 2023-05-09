@@ -391,6 +391,8 @@ size = Vector2(81, 57)
 
 [node name="cat" type="CharacterBody2D"]
 position = Vector2(255, 294)
+collision_mask = 8
+platform_wall_layers = 8
 script = ExtResource("11_nx471")
 
 [node name="cat_animated_sprite" type="AnimatedSprite2D" parent="."]
