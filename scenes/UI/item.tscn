@@ -1,0 +1,172 @@
+[gd_scene load_steps=7 format=3 uid="uid://doswhel0tbi5a"]
+
+[ext_resource type="Script" path="res://scenes/other_scripts/item.gd" id="1_yvoqy"]
+[ext_resource type="Texture2D" uid="uid://dp0yglh48w8ci" path="res://assets/ui/frame02.png" id="2_6tbap"]
+[ext_resource type="FontFile" uid="uid://c0wig0bfmih3u" path="res://assets/fonts/FFFFORWA.TTF" id="3_na0fk"]
+[ext_resource type="FontFile" uid="uid://i1l120kxgalm" path="res://assets/fonts/manaspc.ttf" id="4_eftwt"]
+[ext_resource type="FontFile" uid="uid://dvxltes21v0yq" path="res://assets/fonts/Merchant Copy.ttf" id="5_67sbw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkl7l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="item0" type="TextureRect"]
+offset_left = 610.0
+offset_top = -395.0
+offset_right = 828.0
+offset_bottom = -175.0
+stretch_mode = 4
+script = ExtResource("1_yvoqy")
+
+[node name="block0" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 63.0
+grow_horizontal = 2
+texture = ExtResource("2_6tbap")
+
+[node name="Label" type="Label" parent="block0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -13.0
+offset_right = 90.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_na0fk")
+text = "Junior 
+Game Developer"
+
+[node name="block1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 63.0
+offset_right = 125.0
+offset_bottom = 165.0
+grow_horizontal = 2
+texture = ExtResource("2_6tbap")
+
+[node name="Label" type="Label" parent="block1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -33.0
+offset_right = 101.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.564706, 0.0313726, 0.0588235, 1)
+theme_override_fonts/font = ExtResource("4_eftwt")
+theme_override_font_sizes/font_size = 20
+text = "Push Gaming
+"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="block1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -21.0
+offset_right = 101.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
+theme_override_fonts/font = ExtResource("4_eftwt")
+theme_override_font_sizes/font_size = 15
+text = "
+London, hybrid"
+horizontal_alignment = 2
+
+[node name="block2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 166.0
+offset_right = 125.0
+offset_bottom = 229.0
+grow_horizontal = 2
+texture = ExtResource("2_6tbap")
+
+[node name="Label" type="Label" parent="block2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -13.0
+offset_right = 90.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
+theme_override_fonts/font = ExtResource("4_eftwt")
+text = "July 2020
+      September 2020"
+
+[node name="block3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6tbap")
+
+[node name="Label" type="Label" parent="block3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -96.0
+offset_right = 102.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
+theme_override_fonts/font = ExtResource("5_67sbw")
+theme_override_font_sizes/font_size = 25
+text = "hover button - description"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 233.0
+offset_bottom = 231.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dkl7l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dkl7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dkl7l")
