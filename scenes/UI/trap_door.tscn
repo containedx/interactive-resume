@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqrrf4kq8xkjt"]
+[gd_scene load_steps=7 format=3 uid="uid://cqrrf4kq8xkjt"]
 
-[ext_resource type="Texture2D" uid="uid://cbis6imkhhlxd" path="res://assets/ui/frame.png" id="2_37j71"]
 [ext_resource type="Script" path="res://scenes/UI/trap_door.gd" id="2_bnkl4"]
-[ext_resource type="FontFile" uid="uid://i1l120kxgalm" path="res://assets/fonts/manaspc.ttf" id="4_ligd1"]
+[ext_resource type="FontFile" uid="uid://c0wig0bfmih3u" path="res://assets/fonts/FFFFORWA.TTF" id="2_l38pv"]
 
 [sub_resource type="Animation" id="Animation_rvrev"]
 resource_name = "fade"
@@ -41,19 +40,18 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jd5j0"]
-size = Vector2(109, 46)
+size = Vector2(125, 46)
 
 [node name="trap_door0" type="StaticBody2D"]
 position = Vector2(2375, 508)
 script = ExtResource("2_bnkl4")
 
-[node name="sample_board" type="TextureRect" parent="."]
-offset_left = -64.0
+[node name="sample_board" type="ColorRect" parent="."]
+offset_left = -84.0
 offset_top = -15.0
 offset_right = 48.0
 offset_bottom = 32.0
-texture = ExtResource("2_37j71")
-expand_mode = 1
+color = Color(0.564706, 0.0313726, 0.0588235, 1)
 
 [node name="Label" type="Label" parent="sample_board"]
 layout_mode = 1
@@ -68,9 +66,8 @@ offset_right = 49.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_ligd1")
-theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
+theme_override_fonts/font = ExtResource("2_l38pv")
 text = "EXPERIENCE"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -81,7 +78,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8.5, 8)
+position = Vector2(-18.5, 8)
 shape = SubResource("RectangleShape2D_jd5j0")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

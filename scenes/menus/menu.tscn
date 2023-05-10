@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_6xawp"]
 [ext_resource type="PackedScene" uid="uid://dr7vmkkbhmbq4" path="res://scenes/menus/button_template.tscn" id="1_tgmpp"]
 [ext_resource type="Texture2D" uid="uid://cj8dgemossw70" path="res://assets/ui/woods_field.jpg" id="2_og8x4"]
-[ext_resource type="FontFile" uid="uid://bbaig2pb542kj" path="res://assets/fonts/Blox2.ttf" id="3_aja7g"]
 [ext_resource type="FontFile" uid="uid://i1l120kxgalm" path="res://assets/fonts/manaspc.ttf" id="4_liha0"]
+[ext_resource type="FontFile" uid="uid://c0wig0bfmih3u" path="res://assets/fonts/FFFFORWA.TTF" id="4_m0uq5"]
 
 [sub_resource type="Animation" id="Animation_j3aui"]
 resource_name = "animation"
@@ -78,9 +78,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -68.5
+offset_top = -4.5
 offset_right = 200.0
-offset_bottom = 135.5
+offset_bottom = 199.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,16 +107,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -247.0
-offset_top = 23.0
-offset_right = 271.0
-offset_bottom = 129.0
+offset_left = -363.0
+offset_top = 119.0
+offset_right = 387.0
+offset_bottom = 232.0
 grow_horizontal = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.577162, 0.0527595, 0.0807291, 1)
-theme_override_fonts/font = ExtResource("3_aja7g")
+theme_override_fonts/font = ExtResource("4_m0uq5")
 theme_override_font_sizes/font_size = 80
-text = "KiNgA ZaWaRtY"
+text = "Kinga Zawarty"
 
 [node name="under_title" type="Label" parent="title"]
 layout_mode = 1
@@ -134,7 +134,7 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
 theme_override_fonts/font = ExtResource("4_liha0")
 theme_override_font_sizes/font_size = 20
-text = "INTERACTIVE RESUME"
+text = "GAME PROGRAMMER"
 
 [node name="credits" type="Control" parent="."]
 visible = false

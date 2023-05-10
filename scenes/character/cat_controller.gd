@@ -5,10 +5,10 @@ extends CharacterBody2D
 
 @onready var audio_player : AudioStreamPlayer2D =$AudioStreamPlayer2D
 
-var normal_speed : float = 5000
+var normal_speed : float = 10000
 var run_speed : float = 25000
 
-var speed : float = 5000
+var speed : float = normal_speed
 var jump_speed : float = 400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -47,7 +47,7 @@ func handle_movement(delta):
 	
 	var input_vector = Input.get_vector("left", "right", "up", "down")
 	velocity.x = input_vector.x * delta * speed
-	if Input.is_action_just_pressed("up") and is_on_floor():
+	if Input.is_action_just_pressed("up") and is_on_floor() and sprite.animation != "lie":
 		velocity.y = input_vector.y * jump_speed
 	
 	move_and_slide()
@@ -65,6 +65,8 @@ func handle_animation():
 	
 	if Input.is_action_just_released("run"):
 		speed = normal_speed
+		if sprite.animation == "run":
+			walk()
 	if Input.is_action_just_pressed("right"):
 		sprite.flip_h = false
 		walk()
