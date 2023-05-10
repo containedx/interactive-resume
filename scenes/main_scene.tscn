@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://7g4d0fex1kyu"]
+[gd_scene load_steps=19 format=3 uid="uid://7g4d0fex1kyu"]
 
 [ext_resource type="TileSet" uid="uid://cmdvq70gehbp0" path="res://assets/tileset/tileset.tres" id="1_1bbvk"]
 [ext_resource type="Script" path="res://scenes/game_controller.gd" id="1_iukov"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6vmdfaufw8v" path="res://scenes/UI/sample_board.tscn" id="6_glk88"]
 [ext_resource type="PackedScene" uid="uid://cqrrf4kq8xkjt" path="res://scenes/UI/trap_door.tscn" id="8_s05g8"]
 [ext_resource type="PackedScene" uid="uid://bghfcnydqq00h" path="res://scenes/UI/mushroom.tscn" id="10_27lie"]
+[ext_resource type="AudioStream" uid="uid://dc1nhiep06ojs" path="res://assets/sound/background_retro_funk.mp3" id="12_wemjs"]
 
 [sub_resource type="Animation" id="Animation_03f2i"]
 resource_name = "experience"
@@ -364,3 +365,9 @@ caption = "EDUCATION"
 libraries = {
 "": SubResource("AnimationLibrary_db6q6")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("12_wemjs")
+volume_db = -19.123
+autoplay = true

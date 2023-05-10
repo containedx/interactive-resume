@@ -3,12 +3,19 @@ extends CharacterBody2D
 @onready var environment = $"../environment"
 @onready var sprite : AnimatedSprite2D = $cat_animated_sprite
 
+@onready var audio_player : AudioStreamPlayer2D =$AudioStreamPlayer2D
+
 var normal_speed : float = 5000
 var run_speed : float = 25000
 
 var speed : float = 5000
 var jump_speed : float = 400
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+# sounds
+var lie_sound = load("res://assets/sound/cat_por.wav")
+var jump_sound = load("res://assets/sound/meow.wav")
+var walk_sound = load("res://assets/sound/footsteps.wav")
 
 func _process(_delta):
 	handle_animation()
@@ -64,7 +71,7 @@ func handle_animation():
 	if Input.is_action_just_pressed("left"):
 		sprite.flip_h = true
 		walk()
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed("run")  && velocity != Vector2.ZERO:
 		run()
 		speed = run_speed
 	
@@ -72,19 +79,28 @@ func handle_animation():
 		lie()
 
 
+func play_sound( sound , volume = 0.0 ,loop := false ):
+	audio_player.stream = sound
+	audio_player.volume_db = volume
+	audio_player.play()
 
 
 func jump():
 	sprite.play("jump")
+	play_sound(jump_sound)
 
 func idle():
 	sprite.play("idle")
+	audio_player.stop()
 
 func walk():
 	sprite.play("walk")
+	play_sound(walk_sound)
 
 func lie():
 	sprite.play("lie")
+	play_sound(lie_sound)
 
 func run():
 	sprite.play("run")
+	play_sound(walk_sound)
