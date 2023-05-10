@@ -6,10 +6,13 @@ extends TextureRect
 
 func _ready():
 	description_box.visible = false
-
+	
 
 func _process(_delta):
-	
+	reveal_description()
+
+
+func reveal_description():
 	if button.is_hovered():
 		description_box.visible = true
 	else :

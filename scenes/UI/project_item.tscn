@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://lfjr3brkdd7q"]
+
+[ext_resource type="Texture2D" uid="uid://dp0yglh48w8ci" path="res://assets/ui/frame02.png" id="1_hredp"]
+[ext_resource type="Script" path="res://scenes/UI/project_item.gd" id="1_nefu8"]
+[ext_resource type="VideoStream" path="res://assets/videos/boids.ogv" id="2_nktfh"]
+[ext_resource type="FontFile" uid="uid://c0wig0bfmih3u" path="res://assets/fonts/FFFFORWA.TTF" id="3_sluyk"]
+[ext_resource type="FontFile" uid="uid://dvxltes21v0yq" path="res://assets/fonts/Merchant Copy.ttf" id="4_066oq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bprla"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="project_item" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 315.0
+offset_bottom = 233.0
+script = ExtResource("1_nefu8")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hredp")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.5
+offset_top = 22.0
+offset_right = 95.5
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sluyk")
+text = "Boids Algorithm"
+
+[node name="description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -69.5
+offset_right = 125.5
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
+theme_override_fonts/font = ExtResource("4_066oq")
+theme_override_font_sizes/font_size = 21
+text = "Part of my Engineer Thesis project. It is a simulation of herd behaviour with following a target feature - usefull for creating fock of birds or fishes. Game represents another use of this algorithm -  flock of \"enemies\" following and attacking a player."
+autowrap_mode = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.5
+offset_top = -185.0
+offset_right = 126.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+stream = ExtResource("2_nktfh")
+volume_db = -80.0
+autoplay = true
+expand = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 307.0
+offset_bottom = 224.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bprla")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bprla")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bprla")
