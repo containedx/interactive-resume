@@ -39,6 +39,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_sluyk")
 text = "Boids Algorithm"
+horizontal_alignment = 1
 
 [node name="description" type="Label" parent="."]
 layout_mode = 1
@@ -57,9 +58,10 @@ theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
 theme_override_fonts/font = ExtResource("4_066oq")
 theme_override_font_sizes/font_size = 21
 text = "Part of my Engineer Thesis project. It is a simulation of herd behaviour with following a target feature - usefull for creating fock of birds or fishes. Game represents another use of this algorithm -  flock of \"enemies\" following and attacking a player."
+vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="source" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -74,7 +76,6 @@ grow_horizontal = 2
 grow_vertical = 0
 stream = ExtResource("2_nktfh")
 volume_db = -80.0
-autoplay = true
 expand = true
 
 [node name="Button" type="Button" parent="."]
