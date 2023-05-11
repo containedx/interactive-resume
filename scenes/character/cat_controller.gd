@@ -33,9 +33,13 @@ func detect_collissions():
 			show_info( true )
 			if Input.is_action_just_pressed("select"):
 				collision_object.interact()
+				show_info(false)
 		else:
 			show_info(false)
 		
+		if collision_object.is_in_group("TELEPORT"):
+			collision_object.teleport(self)
+
 
 
 func show_info( value ):

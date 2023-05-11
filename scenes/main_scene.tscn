@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://7g4d0fex1kyu"]
+[gd_scene load_steps=39 format=3 uid="uid://7g4d0fex1kyu"]
 
 [ext_resource type="TileSet" uid="uid://cmdvq70gehbp0" path="res://assets/tileset/tileset.tres" id="1_1bbvk"]
 [ext_resource type="Script" path="res://scenes/game_controller.gd" id="1_iukov"]
@@ -26,6 +26,7 @@
 [ext_resource type="VideoStream" path="res://assets/videos/snake.ogv" id="20_mjx0s"]
 [ext_resource type="VideoStream" path="res://assets/videos/images.ogv" id="20_ub1o4"]
 [ext_resource type="VideoStream" path="res://assets/videos/pinkred.ogv" id="21_gp65b"]
+[ext_resource type="PackedScene" uid="uid://d3oluy1qytri4" path="res://scenes/UI/teleport.tscn" id="25_7su3j"]
 
 [sub_resource type="Animation" id="Animation_ebqat"]
 resource_name = "idle_start"
@@ -1019,6 +1020,7 @@ text = "CLICK HERE FOR MORE"
 uri = "https://github.com/containedx"
 
 [node name="Label2" type="Label" parent="environment/content/Portfolio"]
+layout_mode = 0
 offset_left = 2047.0
 offset_top = 1058.0
 offset_right = 2164.0
@@ -1029,6 +1031,7 @@ text = "hover blocks to see description"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="environment/content/Portfolio"]
+layout_mode = 0
 offset_left = 308.0
 offset_top = 1272.0
 offset_right = 425.0
@@ -1041,8 +1044,14 @@ autowrap_mode = 2
 
 [node name="AboutMe" type="Control" parent="environment/content"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 3017.0
+offset_top = 4727.0
+offset_right = 4591.0
+offset_bottom = 5666.0
+
+[node name="teleport" parent="environment/content/AboutMe" instance=ExtResource("25_7su3j")]
+position = Vector2(559, 746)
+target = Vector2(2000, 400)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="environment/content"]
 libraries = {
