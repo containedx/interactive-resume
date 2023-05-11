@@ -28,6 +28,7 @@ func pause_game( value : bool):
 
 func _on_start_again_button_down():
 	get_tree().reload_current_scene()
+	_on_start_button_down()
 
 
 func _on_credits_button_down():
