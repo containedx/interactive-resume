@@ -490,9 +490,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_f6scy")
 theme_override_font_sizes/font_size = 28
-text = "This was interactive mushroom. 
-
-It will help you reveal more informations about me !"
+text = "The next part is divided into 4 Levels. My favourite is \"PORTFOLIO\", but if this is your first time, I advise you to  jump in first one. "
 autowrap_mode = 2
 
 [node name="mushroom0" type="TextureRect" parent="environment/content/start"]
@@ -872,6 +870,8 @@ offset_bottom = 224.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_bprla")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bprla")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bprla")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bprla")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bprla")
 
 [node name="project_item2" parent="environment/content/Portfolio/projects_grid" instance=ExtResource("15_fphad")]
 layout_mode = 2
@@ -957,7 +957,8 @@ layout_mode = 2
 text = "PinkRed Platform"
 
 [node name="description" parent="environment/content/Portfolio/projects_grid/project_item6" index="2"]
-text = "My first project in Godot Engine, made to learn it. The idea of the game is to help main haracter catch beetroots to get healthy."
+text = "My first project in Godot Engine, made to learn it. The idea of the game is to help main character catch beetroots to get healthy.
+Inspired by my experience of having anemia as a teenager. "
 
 [node name="source" parent="environment/content/Portfolio/projects_grid/project_item6" index="3"]
 stream = ExtResource("21_gp65b")

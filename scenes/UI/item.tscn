@@ -170,3 +170,5 @@ offset_bottom = 231.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_dkl7l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dkl7l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dkl7l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dkl7l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dkl7l")
