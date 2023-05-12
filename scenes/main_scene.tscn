@@ -567,7 +567,6 @@ theme_override_font_sizes/font_size = 100
 text = "experience"
 
 [node name="items" type="Control" parent="environment/content/Experience"]
-visible = false
 anchors_preset = 0
 offset_left = 82.0
 offset_top = 639.0
@@ -580,6 +579,11 @@ offset_left = 535.0
 offset_top = -376.0
 offset_right = 753.0
 offset_bottom = -156.0
+
+[node name="Label" parent="environment/content/Experience/items/item0/block3" index="0"]
+text = "developing web browser games, using javascript, typescript, PixiJs, git.
+
+"
 
 [node name="item1" parent="environment/content/Experience/items" instance=ExtResource("12_0wfxm")]
 layout_mode = 0
@@ -603,6 +607,9 @@ Poland, remote"
 text = "February 2021
        August 2021"
 
+[node name="Label" parent="environment/content/Experience/items/item1/block3" index="0"]
+text = "developing games in Unity Engine, C#. Got to know the tools like: MVVM Unity-Weld, Zenject, i2Loc, LeanPool, DOTween. Programming gameplay, UI/UX, animations, vfx, sfx."
+
 [node name="item2" parent="environment/content/Experience/items" instance=ExtResource("12_0wfxm")]
 layout_mode = 0
 offset_left = 1094.0
@@ -624,6 +631,9 @@ Sweden, remote"
 [node name="Label" parent="environment/content/Experience/items/item2/block2" index="0"]
 text = "October 2021
            Present"
+
+[node name="Label" parent="environment/content/Experience/items/item2/block3" index="0"]
+text = "developing games in Godot Engine, gdscript, customizing engine (C++). Programming gameplay, UI/UX, camera, controls, some AI. "
 
 [node name="Label" type="Label" parent="environment/content/Experience/items"]
 layout_mode = 0

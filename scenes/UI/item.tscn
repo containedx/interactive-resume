@@ -159,6 +159,7 @@ theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
 theme_override_fonts/font = ExtResource("5_67sbw")
 theme_override_font_sizes/font_size = 25
 text = "hover button - description"
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
