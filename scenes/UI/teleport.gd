@@ -9,3 +9,4 @@ func _ready():
 func teleport( character ) -> void:
 	character.set_global_position(target)
 
+

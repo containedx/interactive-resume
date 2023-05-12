@@ -29,4 +29,9 @@ func play_if_is_on_porfolio_level():
 	if  cat_y > 3500 and cat_y < 4000:
 		for item in $environment/content/Portfolio/projects_grid.get_children():
 			item.video = true
+	else:
+		stop_videos()
 
+func stop_videos():
+	for item in $environment/content/Portfolio/projects_grid.get_children():
+		item.video = false

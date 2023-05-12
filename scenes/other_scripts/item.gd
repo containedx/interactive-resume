@@ -7,7 +7,7 @@ extends TextureRect
 func _ready():
 	description_box.visible = false
 	
-
+	
 func _process(_delta):
 	reveal_description()
 
