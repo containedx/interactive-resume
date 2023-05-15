@@ -477,22 +477,6 @@ tracks/0/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_kuqdg"]
-resource_name = "start"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("start:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5),
-"transitions": PackedFloat32Array(1.7411, 1.93187, 0.554785),
-"update": 0,
-"values": [Vector2(1347, -668), Vector2(1310, 163), Vector2(1338, 20)]
-}
-
 [sub_resource type="Animation" id="Animation_lpjxt"]
 resource_name = "me2"
 tracks/0/type = "value"
@@ -521,6 +505,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kuqdg"]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1.7411, 1.93187, 0.554785),
+"update": 0,
+"values": [Vector2(1347, -668), Vector2(1310, 163), Vector2(1338, 20)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p0hoc"]
@@ -1492,7 +1492,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.963289, 0.715753, 0.759803, 1)
 theme_override_fonts/font = ExtResource("4_f6scy")
 theme_override_font_sizes/font_size = 21
-text = "My Engineer Thesis project. It is a simulation of herd behaviour with following a target feature - usefull for creating fock of birds or fishes. The pppurpose of the thesis was to examine how field of view of singular Agent affected the flock. Unity Engine."
+text = "My Engineer Thesis project. It is a simulation of herd behaviour with following a target feature - usefull for creating flock of birds or fishes. The purpose of the thesis was to examine how field of view of singular Agent affected the flock. Unity Engine."
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -1570,7 +1570,7 @@ text = "Racing Tracks"
 [node name="description" parent="environment/content/Portfolio/projects_grid/project_item4" index="2"]
 text = "Another mini game, Unity Engine.
 Every level has a lap with start, halfway check point, finish line and obstackles. Car slows down on grass and speeds up on the bridge. Game is saving your record time on each lap.
-During this project I explored new tool inUnity - Splines. "
+During this project I explored new tool in Unity - Splines. "
 
 [node name="source" parent="environment/content/Portfolio/projects_grid/project_item4" index="3"]
 stream = ExtResource("19_bkvmt")
@@ -1648,7 +1648,7 @@ layout_mode = 2
 text = "AI Player"
 
 [node name="description" parent="environment/content/Portfolio/projects_grid/project_item8" index="2"]
-text = "Classic game - tic tac toe - with intelligent opponent. You can never win with it - he best chance is a tie. Made using Minimax algorithm.
+text = "Classic game - tic tac toe - with intelligent opponent. You can never win with it - your best chance is a tie. Made using Minimax algorithm.
 Godot Engine. "
 
 [node name="source" parent="environment/content/Portfolio/projects_grid/project_item8" index="3"]
@@ -1865,6 +1865,7 @@ text = "I love moving my body! I regularly train pole dance & yoga, but I also l
 autowrap_mode = 2
 
 [node name="img" type="TextureRect" parent="environment/content/AboutMe/items_me/me0/Label3"]
+layout_mode = 0
 offset_left = 145.0
 offset_top = -11.0
 offset_right = 263.0
@@ -1874,6 +1875,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="img2" type="TextureRect" parent="environment/content/AboutMe/items_me/me0/Label3"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 118.0
 offset_right = 256.0
@@ -1883,6 +1885,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="img3" type="TextureRect" parent="environment/content/AboutMe/items_me/me0/Label3"]
+layout_mode = 0
 offset_left = 269.0
 offset_top = -10.0
 offset_right = 380.0
@@ -1892,6 +1895,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="img4" type="TextureRect" parent="environment/content/AboutMe/items_me/me0/Label3"]
+layout_mode = 0
 offset_left = 269.0
 offset_top = 122.0
 offset_right = 379.0
@@ -1920,6 +1924,7 @@ text = "my favourite games currently are : Hogwarts Legacy, Stray, The First Tre
 autowrap_mode = 2
 
 [node name="img" type="TextureRect" parent="environment/content/AboutMe/items_me/me0/Label4"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 124.0
 offset_right = 151.0
