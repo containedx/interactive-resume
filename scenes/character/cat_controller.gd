@@ -17,13 +17,12 @@ var lie_sound = load("res://assets/sound/cat_por.wav")
 var jump_sound = load("res://assets/sound/meow.wav")
 var walk_sound = load("res://assets/sound/footsteps.wav")
 
-func _process(_delta):
-	handle_animation()
 
 
 func _physics_process(delta):
 	handle_movement(delta)
 	detect_collissions()
+	handle_animation()
 	
 
 func detect_collissions():
@@ -47,42 +46,42 @@ func show_info( value ):
 
 
 func handle_movement(delta):
-	velocity.y += gravity * delta 
-	
-	var input_vector = Input.get_vector("left", "right", "up", "down")
-	velocity.x = input_vector.x * delta * speed
+	velocity.y += gravity * delta
+	speed = run_speed if Input.is_action_pressed("run") else normal_speed
+
+	velocity.x = 0
+	if Input.is_action_pressed("left"):
+		velocity.x -= speed * delta
+	elif Input.is_action_pressed("right"):
+		velocity.x += speed * delta
+
 	if Input.is_action_just_pressed("up") and is_on_floor() and sprite.animation != "lie":
-		velocity.y = input_vector.y * jump_speed
-	
+		velocity.y = -jump_speed  
+
 	move_and_slide()
 
 
+
 func handle_animation():
-	if !sprite.is_playing() or ( velocity == Vector2.ZERO && sprite.animation != "lie"):
-		idle()
-	
-	if Input.is_action_just_pressed("up"):
-		if sprite.animation == "lie":
-			idle()
+	if !is_on_floor():
+		jump()
+	elif velocity.x != 0:
+		if Input.is_action_pressed("run"):
+			run()
 		else:
-			jump()
-	
-	if Input.is_action_just_released("run"):
-		speed = normal_speed
-		if sprite.animation == "run":
 			walk()
-	if Input.is_action_just_pressed("right"):
-		sprite.flip_h = false
-		walk()
+	else:
+		if sprite.animation != "lie":
+			idle()
+
 	if Input.is_action_just_pressed("left"):
 		sprite.flip_h = true
-		walk()
-	if Input.is_action_pressed("run")  && velocity != Vector2.ZERO:
-		run()
-		speed = run_speed
-	
+	if Input.is_action_just_pressed("right"):
+		sprite.flip_h = false
+
 	if Input.is_action_just_pressed("down"):
 		lie()
+
 
 
 func play_sound( sound , volume = 0.0 ,loop := false ):
