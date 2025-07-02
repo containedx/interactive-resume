@@ -34,18 +34,18 @@ script = ExtResource("1_vv1ls")
 target = Vector2(3000, 300)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -28.0
-offset_top = -24.0
-offset_right = 172.0
-offset_bottom = 10.0
+offset_left = -58.0
+offset_top = -57.0
+offset_right = 222.0
+offset_bottom = 11.0
 theme_override_fonts/font = ExtResource("1_xl0j7")
 theme_override_font_sizes/font_size = 30
-text = "GO BACK UP"
+text = "GO INTO PORTAL 
+  TO RESTART"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 157.0
 offset_bottom = 168.0
-rotation = 4.0837
 pivot_offset = Vector2(78.5, 84)
 texture = ExtResource("1_hu3oc")
 stretch_mode = 4

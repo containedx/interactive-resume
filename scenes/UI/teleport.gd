@@ -7,6 +7,6 @@ func _ready():
 
 
 func teleport( character ) -> void:
-	character.set_global_position(target)
+	get_tree().reload_current_scene()
 
 
