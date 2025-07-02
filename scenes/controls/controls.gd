@@ -1,7 +1,7 @@
 extends TextureRect
 
 
-func _input(event):
+func _input(_event):
 	hightlight($w, "up")
 	hightlight($a, "left")
 	hightlight($d, "right")

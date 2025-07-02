@@ -37,7 +37,7 @@ func detect_collissions():
 			show_info(false)
 		
 		if collision_object.is_in_group("TELEPORT"):
-			collision_object.teleport(self)
+			collision_object.teleport()
 
 
 
@@ -84,7 +84,7 @@ func handle_animation():
 
 
 
-func play_sound( sound , volume = 0.0 ,loop := false ):
+func play_sound( sound , volume = 0.0 ,_loop := false ):
 	audio_player.stream = sound
 	audio_player.volume_db = volume
 	audio_player.play()

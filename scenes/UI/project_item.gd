@@ -5,7 +5,7 @@ extends Control
 
 @export var video : bool = false
 
-func _process(delta):
+func _process(_delta):
 	if true:
 		loop_video()
 	reveal_description()

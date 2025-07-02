@@ -12,7 +12,7 @@ func _ready():
 	content.visible = false
 	menu.visible = true
 
-func _process(delta):
+func _process(_delta):
 	loop_audio()
 	play_if_is_on_porfolio_level()
 

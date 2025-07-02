@@ -6,7 +6,7 @@ func _ready():
 	add_to_group("TELEPORT")
 
 
-func teleport( character ) -> void:
+func teleport() -> void:
 	get_tree().reload_current_scene()
 
 
