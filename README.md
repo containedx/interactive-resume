@@ -2,6 +2,7 @@
 
 
 Hello, this is my fun way to show in more details my journey as a programmer and fun facts about me !
+(last update 2023)
 
 play online [here](https://containedx.itch.io/interactive-resume)
 
